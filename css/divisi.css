@@ -1,0 +1,89 @@
+/* Styling dasar untuk body dan container */
+body {
+    background-color: #f5f8fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Styling untuk heading */
+h2 {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr {
+    transition: background-color 0.3s;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Styling untuk tombol */
+button {
+    margin: 0 2px;
+    font-size: 0.85rem;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+button.btn-info {
+    background-color: #17a2b8;
+}
+
+button.btn-info:hover {
+    background-color: #138496;
+}
+
+button.btn-danger {
+    background-color: #dc3545;
+}
+
+button.btn-danger:hover {
+    background-color: #c82333;
+}
+
+button.btn-secondary {
+    background-color: #6c757d;
+}
+
+button.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Styling untuk table responsive */
+.table-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+

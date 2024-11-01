@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Lembur - Sistem Informasi Manajemen Karyawan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/lembur.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background color for better contrast */
+        }
+        .container-fluid {
+            background-color: white; /* White background for the main content */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Soft shadow */
+            padding: 20px; /* Padding around the container */
+        }
+        h2 {
+            margin-bottom: 20px; /* Space below the heading */
+        }
+        .btn-custom {
+            margin-right: 10px; /* Space between buttons */
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <nav class="bg-primary text-white p-3" style="width: 250px; min-height: 100vh;">
+            <div class="d-flex align-items-center mb-3">
+                <img src="image/unpamlogouts.png" alt="Logo Universitas Pamulang" style="width: 60px; height: auto; margin-right: 10px;">
+                <h4 class="mb-0">Universitas Pamulang</h4>
+            </div>
+            <div class="user-info text-center mb-4">
+                <p>Welcome, Saeful Hasan!</p>
+                <small>Administrator</small>
+            </div>
+
+            <ul class="nav flex-column">
+                <hr class="text-white">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="karyawan.html"><i class="fas fa-users"></i> Karyawan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="jabatan.html"><i class="fas fa-briefcase"></i> Jabatan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="divisi.html"><i class="fas fa-layer-group"></i> Divisi</a>
+                </li>
+                <hr class="text-white">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="absensi.html"><i class="fas fa-calendar-check"></i> Absensi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="izin.html"><i class="fas fa-calendar-alt"></i> Izin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="lembur.html"><i class="fas fa-clock"></i> Lembur</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="flex-grow-1 p-4">
+            <div class="container-fluid">
+                <h2 class="text-primary">Daftar Lembur Karyawan</h2>
+                <div class="mb-3">
+                    <button class="btn btn-primary btn-custom" id="addBtn"><i class="fas fa-plus"></i> Tambah</button>
+                    <button class="btn btn-warning btn-custom" id="editBtn"><i class="fas fa-edit"></i> Edit</button>
+                    <button class="btn btn-danger btn-custom" id="deleteBtn"><i class="fas fa-trash"></i> Hapus</button>
+                    <button class="btn btn-primary mb-3 float-end"><i class="fas fa-sync-alt"></i> Ubah Status</button>
+                </div>
+                <div class="table-responsive mt-3">
+                    <table class="table table-striped table-hover">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Tanggal</th>
+                                <th>Jam Lembur Mulai | Berakhir</th>
+                                <th>Keperluan Lembur</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lemburTableBody">
+                            <tr>
+                                <td>1</td>
+                                <td>Saeful Hasan</td>
+                                <td>2024-05-10</td>
+                                <td>10:35:00 | 15:35:00</td>
+                                <td>Pengganti Izin</td>
+                                <td>Menunggu Konfirmasi</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Yovan Fiqri</td>
+                                <td>2024-05-09</td>
+                                <td>11:05:00 | 04:05:00</td>
+                                <td>Biarkan Bos Kaya</td>
+                                <td>Disetujui</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Ependi</td>
+                                <td>2024-05-04</td>
+                                <td>17:00:00 | 17:30:00</td>
+                                <td>Lembur</td>
+                                <td>Disetujui</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Nauval</td>
+                                <td>2024-05-03</td>
+                                <td>17:00:00 | 21:37:00</td>
+                                <td>Printer</td>
+                                <td>Disetujui</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Apriesta</td>
+                                <td>2024-04-30</td>
+                                <td>01:46:00 | 21:46:00</td>
+                                <td>Pengen Aja</td>
+                                <td>Disetujui</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Fiqri</td>
+                                <td>2024-04-28</td>
+                                <td>17:00:00 | 20:51:00</td>
+                                <td>Printer FEB</td>
+                                <td>Disetujui</td>
+                            </tr>
+                            <!-- More rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let lemburData = [
+            { id: 1, name: "Saeful Hasan", tanggal: "2024-05-10", jamMulai: "10:35:00", jamBerakhir: "15:35:00", keperluan: "Pengganti Izin", status: "Menunggu Konfirmasi" },
+            { id: 2, name: "Yovan Fiqri", tanggal: "2024-05-09", jamMulai: "11:05:00", jamBerakhir: "04:05:00", keperluan: "Biarkan Bos Kaya", status: "Disetujui" },
+            { id: 3, name: "Ependi", tanggal: "2024-05-04", jamMulai: "17:00:00", jamBerakhir: "17:30:00", keperluan: "Lembur", status: "Disetujui" },
+            { id: 4, name: "Nauval", tanggal: "2024-05-03", jamMulai: "17:00:00", jamBerakhir: "21:37:00", keperluan: "Printer", status: "Disetujui" },
+            { id: 5, name: "Apriesta", tanggal: "2024-04-30", jamMulai: "01:46:00", jamBerakhir: "21:46:00", keperluan: "Pengen Aja", status: "Disetujui" },
+            { id: 6, name: "Fiqri", tanggal: "2024-04-28", jamMulai: "17:00:00", jamBerakhir: "20:51:00", keperluan: "Printer FEB", status: "Disetujui" }
+        ];
+
+        function renderTable() {
+            const tbody = document.getElementById('lemburTableBody');
+            tbody.innerHTML = ''; // Clear existing rows
+            lemburData.forEach((item, index) => {
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${item.name}</td>
+                        <td>${item.tanggal}</td>
+                        <td>${item.jamMulai} | ${item.jamBerakhir}</td>
+                        <td>${item.keperluan}</td>
+                        <td>${item.status}</td>
+                    </tr>
+                `;
+                tbody.insertAdjacentHTML('beforeend', row);
+            });
+        }
+
+        function addEntry() {
+            const name = prompt("Enter Name:");
+            const tanggal = prompt("Enter Tanggal (YYYY-MM-DD):");
+            const jamMulai = prompt("Enter Jam Mulai (HH:mm:ss):");
+            const jamBerakhir = prompt("Enter Jam Berakhir (HH:mm:ss):");
+            const keperluan = prompt("Enter Keperluan Lembur:");
+            const status = "Menunggu Konfirmasi";
+
+            const newEntry = {
+                id: lemburData.length + 1,
+                name,
+                tanggal,
+                jamMulai,
+                jamBerakhir,
+                keperluan,
+                status
+            };
+
+            lemburData.push(newEntry);
+            renderTable();
+        }
+
+        function editEntry() {
+            const id = prompt("Enter the ID of the entry to edit:");
+            const entry = lemburData.find(item => item.id == id);
+            if (entry) {
+                entry.name = prompt("Enter new Name:", entry.name);
+                entry.tanggal = prompt("Enter new Tanggal (YYYY-MM-DD):", entry.tanggal);
+                entry.jamMulai = prompt("Enter new Jam Mulai (HH:mm:ss):", entry.jamMulai);
+                entry.jamBerakhir = prompt("Enter new Jam Berakhir (HH:mm:ss):", entry.jamBerakhir);
+                entry.keperluan = prompt("Enter new Keperluan Lembur:", entry.keperluan);
+                entry.status = prompt("Enter new Status:", entry.status);
+                renderTable();
+            } else {
+                alert("Entry not found.");
+            }
+        }
+
+        function deleteEntry() {
+            const id = prompt("Enter the ID of the entry to delete:");
+            const index = lemburData.findIndex(item => item.id == id);
+            if (index > -1) {
+                lemburData.splice(index, 1);
+                renderTable();
+            } else {
+                alert("Entry not found.");
+            }
+        }
+
+        // Initial rendering of the table
+        renderTable();
+
+        // Button event listeners
+        document.getElementById('addBtn').addEventListener('click', addEntry);
+        document.getElementById('editBtn').addEventListener('click', editEntry);
+        document.getElementById('deleteBtn').addEventListener('click', deleteEntry);
+        
+    </script>
+    <script src="js/lembur.js"></script>
+</body>
+</html>
